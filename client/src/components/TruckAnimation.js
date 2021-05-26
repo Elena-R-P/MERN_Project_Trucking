@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import Img1 from '../images/truck.jpeg';
-import Img2 from '../images/planet.svg';
 import Img3 from '../images/truck2.jpg';
 import Img4 from '../images/truck3.jpg';
 import GoogleMapsComp from './GoogleMapsComp';
@@ -40,9 +39,8 @@ const Image2 = styled(motion.img)`
     max-heigth: 200px;
 `;
 const Image3 = styled(motion.img)`
-    position: absolute;
-    max-width: 250px;
-    max-heigth: 250px;
+    max-width: 230px;
+    max-heigth: 230px;
 `;
 
 const ColumnLeft = styled.div`
@@ -61,9 +59,8 @@ const ColumnLeft = styled.div`
         top: 250px;
         left: 40px
     }
-    ${Image1}:nth-child(2) {
-        top: 800px;
-        left: 720px;
+    ${Image3}:nth-child(2) {
+        top: 350px;
     }
 `;
 const Button = styled(motion.button)`
@@ -84,13 +81,8 @@ const ColumnRight = styled.div`
     position: relative;
 
     ${Image2}:nth-child(1) {
-        top: 700px;
-        left: 250px;
-    }
-    
-    ${Image2}:nth-child(2) {
-        top: 30px;
-        left: 720px;
+        top: 40px;
+        left: 750px;
     }
 `;
 
@@ -131,7 +123,7 @@ const TruckAnimation = () => {
 
                     >Get Started</Button>
 
-                    <Image1 
+                    <Image3 
                     src={Img3} 
                     alt="img3"
                     whileTap={{ scale: 1.9 }}
@@ -139,14 +131,6 @@ const TruckAnimation = () => {
                     />  
                 </ColumnLeft>
                 <ColumnRight>
-                    <Image3 
-                    src={Img2} 
-                    alt="img2"
-                    whileTap={{ scale: 0.5 }}
-                    drag={true}
-                    dragConstrains={{left: 0, right:50, top:50, bottom:50}}
-                    />
-                    
                     <Image2 
                     src={Img4} 
                     alt="img4"

@@ -2,7 +2,16 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import styles from './Unit.module.css';
 import Moment from 'react-moment';
-import {Link} from '@reach/router'
+import {Link} from '@reach/router';
+import styled from 'styled-components';
+import {motion} from 'framer-motion';
+import Img2 from '../images/planet.svg';
+
+const Image = styled(motion.img)`
+    position: absolute;
+    max-width: 100px;
+    max-heigth: 100px;
+`;
 
 const AllUnits = () => {
     const [allUnits, setAllUnits] = useState([]);
@@ -28,7 +37,12 @@ const AllUnits = () => {
 
     return (
         <div className={styles.container}>
-            <table>
+            <motion.table
+            whileTap={{
+                scale: 1.1,
+                color: '#D8B9B3',
+                backgroundColor: '#F8421B',
+            }}>
                 <thead>
                     <tr>
                         <th>Unit #</th>
@@ -59,7 +73,15 @@ const AllUnits = () => {
                         })
                     }
                 </tbody>
-            </table>
+                
+            </motion.table>
+            <Image
+                src={Img2}
+                alt="img2"
+                whileTap={{ scale: 0.5 }}
+                drag={true}
+                dragConstrains={{left: 0, right:50, top:50, bottom:50}}
+            />
         </div>
     );
 };

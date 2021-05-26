@@ -54,7 +54,7 @@ const EditUnit = (props) => {
                         <div className="col">
                             <div className="mb-3">
                                 <label className="form-label">Unit#</label>
-                                <input onChange={changeHandler} type="text" className="form-control" name="unit"/>
+                                <input onChange={changeHandler} type="text" className="form-control" value={props.unit} name="unit"/>
                                 <p className="text-danger">{errors.unit? errors.unit.message: ""}</p>
                             </div>
                             <div className="mb-3">
